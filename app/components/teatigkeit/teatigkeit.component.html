@@ -9,7 +9,7 @@
         <p>{{$ctrl.teatigkeit.getTime() | date:'HH:mm:ss':'UTC'}}</p>
     </div>
     <div flex="5" layout="row" layout-align="center center">
-        <md-button class="md-icon-button" ng-click="$ctrl.delete()">
+        <md-button class="md-icon-button" ng-click="$ctrl.delete()" ng-if="!$ctrl.teatigkeit.isRunning">
             <md-icon md-font-icon="material-icons">delete</md-icon>
         </md-button>
     </div>
