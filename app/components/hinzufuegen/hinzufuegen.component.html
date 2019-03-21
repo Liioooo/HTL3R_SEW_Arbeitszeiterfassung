@@ -1,0 +1,24 @@
+<form name="$ctrl.addForm" layout="row" class="md-padding" layout-align="center center">
+    <div flex="20">
+        <md-input-container>
+            <label>Person</label>
+            <input name="person" ng-model="person" required>
+        </md-input-container>
+    </div>
+    <div flex="70">
+        <md-input-container class="md-block">
+            <label>Tätigkeit</label>
+            <input name="taetigkeit" ng-model="taetigkeit" required>
+        </md-input-container>
+    </div>
+    <div flex="5" layout="row" layout-align="center center">
+        <md-button class="md-icon-button" ng-click="$ctrl.hide()">
+            <md-icon md-font-icon="material-icons">delete</md-icon>
+        </md-button>
+    </div>
+    <div flex="5" layout="row" layout-align="center center">
+        <md-button class="md-icon-button">
+            <md-icon md-font-icon="material-icons" class="md-primary" ng-click="$ctrl.addWork()">check_circle</md-icon>
+        </md-button>
+    </div>
+</form>

@@ -1,3 +1,35 @@
-<div>
-    testZeit
+<div layout="row" class="table-header" layout-align="center center">
+    <div flex="20">
+        <h3>Person</h3>
+    </div>
+    <div flex="50">
+        <h3>Tätigkeit</h3>
+    </div>
+    <div flex="20">
+        <h3>Dauer</h3>
+    </div>
+    <div flex="5" layout="row" layout-align="center center"></div>
+    <div flex="5" layout="row" layout-align="center center">
+        <md-button class="md-icon-button" ng-click="$ctrl.currentlyAdding = true">
+            <md-icon md-font-icon="material-icons" class="md-primary">add_circle</md-icon>
+        </md-button>
+    </div>
+</div>
+<md-divider></md-divider>
+<app-teatigkeit ng-repeat="teatigkeit in $ctrl.getTeatigkeiten()" teatigkeit="teatigkeit"></app-teatigkeit>
+<div ng-if="$ctrl.currentlyAdding">
+    <md-divider></md-divider>
+    <app-hinzufuegen hide-adder="$ctrl.currentlyAdding = false"></app-hinzufuegen>
+</div>
+<md-divider></md-divider>
+<div layout="row" class="table-header" layout-align="center center">
+    <div flex="20"></div>
+    <div flex="50">
+        <h3>Gesamtdauer</h3>
+    </div>
+    <div flex="20">
+        <h3>{{$ctrl.allTimes() | date:'HH:mm:ss':'UTC'}}</h3>
+    </div>
+    <div flex="5"></div>
+    <div flex="5"></div>
 </div>

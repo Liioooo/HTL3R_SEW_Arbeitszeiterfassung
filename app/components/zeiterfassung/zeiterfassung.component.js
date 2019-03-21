@@ -6,7 +6,7 @@ app.component("appZeiterfassung", {
 });
 
 
-app.config(function($stateProvider, $urlRouterProvider) {
+app.config(function($stateProvider) {
     $stateProvider.state({
         name: "zeiterfassung",
         url: "/zeiterfassung",
@@ -15,6 +15,15 @@ app.config(function($stateProvider, $urlRouterProvider) {
 });
 
 
-app.controller("ZeiterfassungController", function() {
+app.controller("ZeiterfassungController", function(TeatigkeitenService) {
 
+    this.currentlyAdding = false;
+
+    this.getTeatigkeiten = ()  => {
+      return TeatigkeitenService.getAll() || [];
+    };
+
+    this.allTimes = () => {
+        return TeatigkeitenService.allTimes;
+    }
 });
